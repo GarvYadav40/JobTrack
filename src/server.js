@@ -711,8 +711,13 @@ if (require.main === module) {
             console.log("Database connected successfully!");
             console.log(result.rows[0]);
         } catch (err) {
-            console.error("Database connection failed:", err.message);
-        }
+    console.error("Database connection failed!");
+    console.error("Error name:", err.name);
+    console.error("Error code:", err.code);
+    console.error("Error message:", err.message);
+    console.error("Error detail:", err.detail);
+    console.error("Error stack:", err.stack);
+}
     });
 }
 
