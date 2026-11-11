@@ -25,6 +25,7 @@ A backend REST API that helps users manage their job applications, track intervi
 - Supertest
 
 ## Project Structure
+## Project Structure
 
 ```text
 jobtrack/
@@ -34,14 +35,35 @@ jobtrack/
 │   ├── middleware/
 │   │   └── authMiddleware.js
 │   ├── routes/
-│   │   └── authRoutes.js
+│   │   ├── authRoutes.js
+│   │   └── applicationRoutes.js
 │   └── server.js
 ├── tests/
 │   └── auth.test.js
 ├── .env
 ├── .gitignore
 ├── package.json
+├── package-lock.json
 └── README.md
+```
+
+## Architecture
+
+```mermaid
+flowchart TD
+    A[Client / Thunder Client] --> B[Express Server]
+    B --> C[Authentication Middleware]
+    C --> D[API Routes]
+    D --> E[PostgreSQL Database]
+
+    E --> F[Users]
+    E --> G[Applications]
+    G --> H[Interviews]
+    G --> I[Notes]
+    G --> J[Status History]
+
+    G --> K[PostgreSQL Trigger]
+    K --> J
 ```
 
 ## Installation and Setup
