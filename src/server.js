@@ -717,6 +717,7 @@ if (require.main === module) {
     console.error("Error message:", err.message);
     console.error("Error detail:", err.detail);
     console.error("Error stack:", err.stack);
+    console.error("Underlying errors:", err.errors);
 }
     });
 }
