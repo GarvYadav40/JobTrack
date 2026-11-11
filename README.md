@@ -101,9 +101,17 @@ Use your own PostgreSQL credentials and a strong JWT secret.
 
 Create a PostgreSQL database named `jobtrack`.
 
-Create the required tables: `users`, `applications`, `interviews`, `notes`, and `status_history`.
+Run the SQL script provided in `database/schema.sql` against the newly created database.
 
-Also configure the application status history trigger.
+The script creates:
+- Users
+- Applications
+- Interviews
+- Notes
+- Status history
+
+It also creates the PostgreSQL trigger that automatically records application status changes.
+
 
 ### 5. Start the server
 
